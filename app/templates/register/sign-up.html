@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Signup to get services
+{% endblock title %}
+
+
+{% block content %}
+
+	<div class="login">
+		<form method="post" action="" enctype="multipart/form-data">
+			<center><h3 style="text-decoration: underline;">Sign<span style="color: blue;">Up</span></h3></center>
+			{% csrf_token %}
+			{{form|crispy}}
+			<p class="ms-5">Have account? Login Now <a class="btn btn-outline-primary mt-4"  data-bs-toggle="modal" data-bs-target="#loginModal">here</a></p>
+			<button type="submit" class="btn btn-outline-primary btn-block mt-4" id="login-btn">Sign Up</button>
+		</form>
+	</div>
+
+
+{% endblock content %}

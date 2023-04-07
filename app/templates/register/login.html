@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Login Page
+{% endblock title %}
+
+
+{% block content %}
+<div class="login">
+    <form method="post">
+        <center><h3 style="text-decoration: underline;">Sign<span style="color: blue;">in</span></h3></center>
+        {% csrf_token %}
+        <div class="input-group">
+             <input type="email" class="form-control" name="email" placeholder="Email Address .." required>
+        </div>
+        <div class="input-group mt-3 mb-3">
+             <input type="password" class="form-control" name="password" placeholder="Password .." required>
+        </div>
+        <p class="ms-5">Haven't account yet? Create new <a href="{% url 'sign_up' %}">here</a></p>
+
+        <div class="d-flex">
+            <button type="submit" class="btn btn-outline-primary" id="login-btn">Login</button>
+            <button type="reset" class="btn btn-outline-danger ms-auto">Cancel</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
